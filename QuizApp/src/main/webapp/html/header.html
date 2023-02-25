@@ -1,0 +1,45 @@
+<section id="navbar">
+	<nav class="navbar navbar-expand-lg navbar-light">
+		<div class="container-fluid">
+			<a class="navbar-brand" href="/QuizApp"> Quizify </a>
+			<button class="navbar-toggler" type="button"
+				data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+				aria-controls="navbarSupportedContent" aria-expanded="false"
+				aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarSupportedContent">
+				<ul class="navbar-nav m-auto">
+					<li class="nav-item"><a class="nav-link active"
+						aria-current="page" href="/QuizApp">Home</a></li>
+					<li class="nav-item"><a class="nav-link" href="/QuizApp/addQuestion.jsp">Add Questions</a>
+					</li>
+					<li class="nav-item"><a class="nav-link" href="#product">Products</a>
+					</li>
+					<li class="nav-item"><a class="nav-link" href="#about">About
+							Us</a></li>
+					<li class="nav-item"><a class="nav-link" href="#social">Contact
+							Us</a></li>
+				</ul>
+
+				<% if (session.getAttribute("user") != null) { %>
+				<ul class="nav navbar-nav my-2 my-lg-0">
+					<li class="nav-item"><a class="nav-link" href="/QuizApp/jsp/profile.jsp">${sessionScope.user}</a></li>
+					<li class="nav-item"><a class="nav-link" href="logout">Logout</a></li>
+
+				</ul>
+				<% } else {%>
+				<ul class="nav navbar-nav my-2 my-lg-0">
+					<li class="nav-item"><a class="nav-link" href="/QuizApp/login.jsp">Login</a></li>
+					<li class="nav-item"><a class="nav-link" href="/QuizApp/register.jsp">Sign
+							Up</a></li>
+
+				</ul>
+				<% } %>
+
+
+
+			</div>
+		</div>
+	</nav>
+</section>
